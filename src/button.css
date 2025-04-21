@@ -1,0 +1,162 @@
+/* From Uiverse.io by cssbuttons-io */ 
+.button {
+    display: inline-block;
+    padding: 10px 34px;
+    border: 1px solid #4f4f4f;
+    border-radius: 50px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 19px;
+    cursor: pointer;
+    color: white;
+    z-index: 1;
+  }
+  
+  .button:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #4F39F6;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  .button:hover {
+    color: #ffffff;
+    border: 1px solid #4F39F6;
+  }
+  
+  .button:hover:before {
+    top: -35%;
+    background-color: #4F39F6;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  .button:hover:after {
+    top: -45%;
+    background-color: #4F39F6;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  /* From Uiverse.io by MuhammadHasann */ 
+.card_container {
+  --X: 0deg;
+  --Y: 0deg;
+  --Z: 0deg;
+  --angleX: 15deg;
+  --angleY: 20deg;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.card_hover {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.card {
+  --light: #fff;
+  --dark: #fff;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+
+  transform-origin: center;
+  transform: rotateX(var(--X)) rotateY(var(--Y)) rotateZ(var(--Z));
+  transition: transform 0.3s ease-in-out;
+}
+
+.say-hi {
+  position: relative;
+
+  width: 100%;
+  height: 2rem;
+  background-color: transparent;
+}
+
+.icon_say-hi {
+  position: absolute;
+  bottom: 0;
+  left: -0.5rem;
+
+  width: 3rem;
+
+  opacity: 0;
+  transform-origin: 60% 90%;
+  transform: translate(-15deg);
+  filter: drop-shadow(0 0 0.5rem #2b2b2b);
+  transition: all 0.2s ease-in-out;
+}
+
+.card .icon_say-hi {
+  width: 3.5rem;
+
+  opacity: 1;
+  animation: say-hi 0.35s linear infinite alternate;
+}
+
+@keyframes say-hi {
+  to {
+    transform: rotate(25deg);
+  }
+}
+
+.title {
+  overflow: clip;
+
+  width: 100%;
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.paragraph {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
